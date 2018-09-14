@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+html, body{
+  margin: 0;
+}
+
+*{
+  color: #00b920;
+  font-family: 'VT323', sans-serif;
+}
+
+input, select, textarea{
+  border: none;
+  padding: 5px;
+  width: 200px;
+}
+
+button.btn{
+  background-color: black;
+  border: 1px solid #00b920;
+  cursor: pointer;
+  padding: 5px;
+}
