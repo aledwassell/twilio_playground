@@ -51,4 +51,8 @@ router.route('/makecall')
             console.log(c.sid);
         }).done();
     });
+router.route('/changecolor')
+    .post((req, res, next) => {
+        console.log(req.body);
+    });
 module.exports = router;
