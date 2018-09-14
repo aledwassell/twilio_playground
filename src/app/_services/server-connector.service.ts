@@ -14,7 +14,9 @@ import {Color} from '../_interfaces/color';
 export class ServerConnectorService {
     private _numbers: Array<Number> = [
         {id: 1, name: 'Chris', number: '+447483256112'},
-        {id: 2, name: 'Aled', number: '+447587188943'}
+        {id: 2, name: 'Aled', number: '+447587188943'},
+        {id: 3, name: 'Rapha', number: '+447961440183'},
+        {id: 4, name: 'Bethan', number: '+447961440183'}
     ];
     private _colors: Array<Color> = [
         {name: 'red', hex: 'D13131'},

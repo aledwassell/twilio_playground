@@ -54,6 +54,5 @@ router.route('/makecall')
 router.route('/changecolor')
     .post((req, res, next) => {
         console.log(req.body);
-
     });
 module.exports = router;
