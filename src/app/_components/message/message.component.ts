@@ -6,10 +6,10 @@ import {Number} from '../../_interfaces/numbers';
 @Component({
     selector: 'app-message',
     template: `
-        <div class="container">
+        <div>
             <h1>SEND A MESSAGE TO: {{f.to.value}}</h1>
             <p></p>
-            <form [formGroup]="twilioCallForm" (ngSubmit)="makeCall()">
+            <form [formGroup]="twilioForm" (ngSubmit)="sendMessage()">
                 <div class="input-box">
                     <select type="text" formControlName="to" placeholder="number">
                         <option selected value="" disabled>select a number</option>
@@ -19,7 +19,7 @@ import {Number} from '../../_interfaces/numbers';
                 <div class="input-box">
                     <textarea cols="200" type="text" formControlName="msg" placeholder="message"></textarea>
                 </div>
-                <button class="btn" type="submit">SEND MESSAGE</button>
+                <button class="btn" type="submit" [disabled]="!twilioForm.valid" [ngClass]="{'disabled' : !twilioForm.valid}">SEND MESSAGE</button>
             </form>
         </div>
     `,
@@ -29,14 +29,12 @@ export class MessageComponent implements OnInit {
 
     twilioForm: FormGroup;
     submitted = false;
-    numbers: Array<Number> = [
-        {id: 1, name: 'Chris', number: '+447483256112'},
-        {id: 2, name: 'Aled', number: '+447587188943'}
-    ];
+    public numbers: Array<Number>;
 
     constructor(
         private server: ServerConnectorService,
         private fb: FormBuilder) {
+        this.numbers = this.server.getNumbers;
     }
     ngOnInit() {
         this.twilioForm = this.fb.group({
