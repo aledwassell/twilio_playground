@@ -1,8 +1,9 @@
 let express = require('express'),
     cors = require('cors'),
+    conf = require('./config'),
     router = express.Router(),
-    accountSid = 'AC776fc58ef5aa6e5c227c92ef2b1a77d4',
-    authToken = '8cc2bf9b3a399e5ee51c5e1c657fe20a',
+    accountSid = conf.accountSid,
+    authToken = conf.authToken,
     VoiceResponse = require('twilio').twiml.VoiceResponse,
     client = require('twilio')(accountSid, authToken);
 app = express();
@@ -18,7 +19,7 @@ router.route('/sendmsg')
     .post((req, res, next) => {
         console.log(req.body);
         client.messages.create({
-            from: '+447403934067',
+            from: conf.fromNumber,
             to: req.body.to,
             body: req.body.msg
         }).then(m => {
@@ -31,9 +32,9 @@ router.route('/makecall')
     })
     .post((req, res, next) => {
         console.log(req.body);
-        client.studio.flows('FW8bdebf2408ca0da29f198e93362065d9').executions.create({
-            to: '+447587188943',
-            from: '+447403934067',
+        client.studio.flows(conf.flow).executions.create({
+            to: req.body.to,
+            from: conf.fromNumber,
             parameters: JSON.stringify({
                 sentence: req.body.sentence,
                 item_1: req.body.item_1,

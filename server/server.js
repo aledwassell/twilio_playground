@@ -1,4 +1,5 @@
 const express = require('express'),
+    conf = require('./config'),
     http = require('http'),
     bodyParser = require('body-parser'),
     cors = require('cors'),
@@ -6,8 +7,8 @@ const express = require('express'),
     app = express(),
     routes = require('./routes/index'),
     MessagingResponse = require('twilio').twiml.MessagingResponse,
-    accountSid = 'AC776fc58ef5aa6e5c227c92ef2b1a77d4',
-    authToken = '8cc2bf9b3a399e5ee51c5e1c657fe20a',
+    accountSid = conf.accountSid,
+    authToken = conf.authToken,
     client = require('twilio')(accountSid, authToken);
 
 app.use(bodyParser.json());

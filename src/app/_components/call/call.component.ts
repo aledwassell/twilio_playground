@@ -33,39 +33,39 @@ import {Color} from '../../_interfaces/color';
                         <input type="text" formControlName="item_3" placeholder="option three" required>
                     </div>
                 </div>
-                <div>
-                    <p>please 5 choose possible background colors.</p>
-                    <div class="inline-input-boxes">
-                        <select type="text" formControlName="color1" placeholder="color 1" required>
-                            <option selected value="" disabled>select a color</option>
-                            <option [value]="color.name" *ngFor="let color of colors">{{color.name}}</option>
-                        </select>
-                    </div>
-                    <div class="inline-input-boxes">
-                        <select type="text" formControlName="color2" placeholder="color 2" required>
-                            <option selected value="" disabled>select a color</option>
-                            <option [value]="color.name" *ngFor="let color of colors">{{color.name}}</option>
-                        </select>
-                    </div>
-                    <div class="inline-input-boxes">
-                        <select type="text" formControlName="color3" placeholder="color 3" required>
-                            <option selected value="" disabled>select a color</option>
-                            <option [value]="color.name" *ngFor="let color of colors">{{color.name}}</option>
-                        </select>
-                    </div>
-                    <div class="inline-input-boxes">
-                        <select type="text" formControlName="color4" placeholder="color 4" required>
-                            <option selected value="" disabled>select a color</option>
-                            <option [value]="color.name" *ngFor="let color of colors">{{color.name}}</option>
-                        </select>
-                    </div>
-                    <div class="inline-input-boxes">
-                        <select type="text" formControlName="color5" placeholder="color 5" required>
-                            <option selected value="" disabled>select a color</option>
-                            <option [value]="color.name" *ngFor="let color of colors">{{color.name}}</option>
-                        </select>
-                    </div>
-                </div>
+                <!--<div>-->
+                    <!--<p>please 5 choose possible background colors.</p>-->
+                    <!--<div class="inline-input-boxes">-->
+                        <!--<select type="text" formControlName="color1" placeholder="color 1" required>-->
+                            <!--<option selected value="" disabled>select a color</option>-->
+                            <!--<option [value]="color.name" *ngFor="let color of colors">{{color.name}}</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                    <!--<div class="inline-input-boxes">-->
+                        <!--<select type="text" formControlName="color2" placeholder="color 2" required>-->
+                            <!--<option selected value="" disabled>select a color</option>-->
+                            <!--<option [value]="color.name" *ngFor="let color of colors">{{color.name}}</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                    <!--<div class="inline-input-boxes">-->
+                        <!--<select type="text" formControlName="color3" placeholder="color 3" required>-->
+                            <!--<option selected value="" disabled>select a color</option>-->
+                            <!--<option [value]="color.name" *ngFor="let color of colors">{{color.name}}</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                    <!--<div class="inline-input-boxes">-->
+                        <!--<select type="text" formControlName="color4" placeholder="color 4" required>-->
+                            <!--<option selected value="" disabled>select a color</option>-->
+                            <!--<option [value]="color.name" *ngFor="let color of colors">{{color.name}}</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                    <!--<div class="inline-input-boxes">-->
+                        <!--<select type="text" formControlName="color5" placeholder="color 5" required>-->
+                            <!--<option selected value="" disabled>select a color</option>-->
+                            <!--<option [value]="color.name" *ngFor="let color of colors">{{color.name}}</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                <!--</div>-->
                 <button class="btn" type="submit" [disabled]="!twilioCallForm.valid" [ngClass]="{'disabled' : !twilioCallForm.valid}">MAKE CALL</button>
             </form>
         </div>
@@ -88,12 +88,12 @@ export class CallComponent implements OnInit {
             sentence: ['', Validators.required],
             item_1: ['', Validators.required],
             item_2: ['', Validators.required],
-            item_3: ['', Validators.required],
-            color1: ['', Validators.required],
-            color2: ['', Validators.required],
-            color3: ['', Validators.required],
-            color4: ['', Validators.required],
-            color5: ['', Validators.required]
+            item_3: ['', Validators.required]
+            // color1: ['', Validators.required],
+            // color2: ['', Validators.required],
+            // color3: ['', Validators.required],
+            // color4: ['', Validators.required],
+            // color5: ['', Validators.required]
         });
     }
     public makeCall = () => {
