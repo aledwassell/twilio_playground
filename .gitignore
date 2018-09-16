@@ -39,4 +39,4 @@ testem.log
 Thumbs.db
 
 # conf
-server/conf.js
+server/config.js

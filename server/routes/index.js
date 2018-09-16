@@ -1,12 +1,12 @@
 let express = require('express'),
     cors = require('cors'),
-    conf = require('./config'),
+    conf = require('../config'),
     router = express.Router(),
     accountSid = conf.accountSid,
     authToken = conf.authToken,
     VoiceResponse = require('twilio').twiml.VoiceResponse,
-    client = require('twilio')(accountSid, authToken);
-app = express();
+    client = require('twilio')(accountSid, authToken),
+    app = express();
 
 router.get('/', (req, res, next) => {
     res.render('index', {title: 'Express app'});
